@@ -1,3 +1,3 @@
-export const setPageTitle = (currentDocument: Document): void => {
-  currentDocument.title = `ExtraSolar \u2022 ${currentDocument.title}`;
+export const setPageTitle = (newTitle: string): void => {
+  document.title = `ExtraSolar \u2022 ${newTitle}`;
 };
