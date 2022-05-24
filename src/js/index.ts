@@ -5,7 +5,7 @@ console.log({location});
 
 if (!['127.0.0.1', 'localhost'].includes(location.hostname)) {
   const base: HTMLBaseElement = document.createElement('base');
-  base.href = '/';
+  base.href = '/extrasolar-html';
   document.head.appendChild(base);
 };
 
