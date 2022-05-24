@@ -3,7 +3,7 @@ import { handleNavigation } from './routing/handleNavigation.js';
 console.log({ location });
 if (!['127.0.0.1', 'localhost'].includes(location.hostname)) {
     const base = document.createElement('base');
-    base.href = 'https://stevenjburns.github.io/extrasolar-html/';
+    base.href = '/extrasolar-html/';
     document.head.appendChild(base);
 }
 ;
