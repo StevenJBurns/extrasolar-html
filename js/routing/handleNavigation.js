@@ -3,6 +3,7 @@ import { getView } from './getView.js';
 export const handleNavigation = async (e) => {
     if (e.target instanceof HTMLAnchorElement) {
         e.preventDefault();
+        console.log({ location });
         if (e.target.href !== location.href) {
             history.pushState({}, e.target.innerHTML, e.target.href);
             setPageTitle(e.target.innerHTML);
