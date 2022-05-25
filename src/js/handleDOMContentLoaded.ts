@@ -6,14 +6,17 @@ import { getView } from './routing/getView.js';
 import { create404View } from './views/404.js';
 
 export const handleDOMContentLoaded = () => {
+  window.addEventListener('popstate', handleNavigation);
   document.body.addEventListener('click', handleNavigation);
   setFooterContent();
 
-  if (Object.values(validPaths).includes(location.pathname as validPaths)) {
+  const main: HTMLElement | null = document.querySelector('main');
+
+  if (main && Object.values(validPaths).includes(location.pathname as validPaths)) {
     setPageTitle(location.pathname);
+    main.innerHTML = getView(create404View());
   } else {
     setPageTitle('Page Not Found');
-    const main = document.querySelector('main');
     if (main) main.innerHTML = getView(create404View());
   };
 };
