@@ -5,13 +5,13 @@ import { setPageTitle } from './setPageTitle.js';
 import { getView } from './routing/getView.js';
 import { create404View } from './views/404.js';
 export const handleDOMContentLoaded = () => {
+    window.addEventListener('popstate', handleNavigation);
     document.body.addEventListener('click', handleNavigation);
-    const main = document.querySelector('main');
     setFooterContent();
-    if (Object.values(validPaths).includes(location.pathname)) {
+    const main = document.querySelector('main');
+    if (main && Object.values(validPaths).includes(location.pathname)) {
         setPageTitle(location.pathname);
-        if (main)
-            main.innerHTML = getView(create404View());
+        main.innerHTML = getView(create404View());
     }
     else {
         setPageTitle('Page Not Found');
