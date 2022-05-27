@@ -1,6 +1,7 @@
 import { setPageTitle } from '../setPageTitle.js';
 import { getView } from './getView.js';
 export const handleNavigation = async (e) => {
+    console.log({ location });
     if (e.target instanceof HTMLAnchorElement) {
         e.preventDefault();
         if (e.target.href !== location.href) {

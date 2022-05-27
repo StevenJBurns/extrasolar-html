@@ -12,7 +12,6 @@ export const handleDOMContentLoaded = () => {
     if (!main)
         return;
     const currentUrl = new URL(location.href);
-    console.log({ location });
     if (Object.values(validPaths).includes(location.pathname)) {
         setPageTitle(location.pathname);
         main.innerHTML = getView(location.pathname);
