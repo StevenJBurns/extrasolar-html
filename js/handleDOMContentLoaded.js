@@ -9,14 +9,15 @@ export const handleDOMContentLoaded = () => {
     document.body.addEventListener('click', handleNavigation);
     setFooterContent();
     const main = document.querySelector('main');
-    if (main && Object.values(validPaths).includes(location.pathname)) {
+    if (!main)
+        return;
+    if (Object.values(validPaths).includes(location.pathname)) {
         setPageTitle(location.pathname);
-        main.innerHTML = getView(create404View());
+        main.innerHTML = getView(location.pathname);
     }
     else {
         setPageTitle('Page Not Found');
-        if (main)
-            main.innerHTML = getView(create404View());
+        main.innerHTML = create404View();
     }
     ;
 };
