@@ -13,8 +13,6 @@ export const handleDOMContentLoaded = () => {
         return;
     const workingDirectory = location.pathname.split('/').slice(-1);
     const workingPath = '/'.concat(workingDirectory.toString());
-    console.log('workingDirectory: ', workingDirectory);
-    console.log('workingPath', workingPath);
     if (Object.values(validPaths).includes(workingPath)) {
         setPageTitle(workingPath);
         main.innerHTML = getView(workingPath);
