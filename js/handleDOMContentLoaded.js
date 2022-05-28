@@ -11,10 +11,11 @@ export const handleDOMContentLoaded = () => {
     const main = document.querySelector('main');
     if (!main)
         return;
-    const currentUrl = new URL(location.href);
-    if (Object.values(validPaths).includes(location.pathname)) {
-        setPageTitle(location.pathname);
-        main.innerHTML = getView(location.pathname);
+    const workingDirectory = location.pathname.split('/').slice(-1);
+    const workingPath = '/'.concat(workingDirectory.toString());
+    if (Object.values(validPaths).includes(workingPath)) {
+        setPageTitle(workingPath);
+        main.innerHTML = getView(workingPath);
     }
     else {
         setPageTitle('Page Not Found');
