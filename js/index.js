@@ -5,7 +5,7 @@ const fetchOptions = {
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'localhost:5500',
+        'Access-Control-Allow-Origin': 'stevenjburns.github.io',
     },
 };
 const getData = async () => await fetch(selectDistinctSystems, fetchOptions)
