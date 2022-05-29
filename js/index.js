@@ -5,7 +5,7 @@ const fetchOptions = {
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'exoplanetarchive.ipac.caltech.edu',
+        'Access-Control-Allow-Origin': 'https://exoplanetarchive.ipac.caltech.edu',
     },
 };
 const getData = async () => await fetch(selectDistinctSystems, fetchOptions)
