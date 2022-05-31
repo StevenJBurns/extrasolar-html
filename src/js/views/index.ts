@@ -4,7 +4,7 @@ import { createDataView } from './data.js';
 import { createSystemsView } from './systems.js';
 import { createAboutView } from './about.js';
 
-export default {
+export const views = {
   create404View,
   createHomeView,
   createDataView,

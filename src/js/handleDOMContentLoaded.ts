@@ -11,12 +11,16 @@ export const handleDOMContentLoaded = () => {
   setFooterContent();
 
   const main: HTMLElement | null = document.querySelector('main');
+  if (!main) return;
 
-  if (main && Object.values(validPaths).includes(location.pathname as validPaths)) {
-    setPageTitle(location.pathname);
-    main.innerHTML = getView(create404View());
+  const workingDirectory = location.pathname.split('/').slice(-1);
+  const workingPath = '/'.concat(workingDirectory.toString());
+  
+  if (Object.values(validPaths).includes(workingPath as validPaths)) {
+    setPageTitle(workingPath);
+    main.innerHTML = getView(workingPath);
   } else {
     setPageTitle('Page Not Found');
-    if (main) main.innerHTML = getView(create404View());
+    main.innerHTML = create404View();
   };
 };
