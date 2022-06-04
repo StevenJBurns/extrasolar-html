@@ -8,7 +8,7 @@ export const handleNavigation = async (e) => {
             setPageTitle(e.target.innerHTML);
             const main = document.querySelector('main');
             if (main)
-                main.innerHTML = getView(e.target.pathname);
+                main.innerHTML = await Promise.resolve(getView(e.target.pathname));
         }
         ;
     }

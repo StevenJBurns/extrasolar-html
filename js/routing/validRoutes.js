@@ -14,7 +14,7 @@ export const validRoutes = [
     {
         path: validPaths.systems,
         title: pageTitles.systems,
-        view: views.createSystemsView(),
+        view: new Promise(resolve => resolve(views.createSystemsView())),
     },
     {
         path: validPaths.about,

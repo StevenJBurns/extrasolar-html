@@ -4,7 +4,7 @@ import { validPaths } from './const/validPaths.js';
 import { setPageTitle } from './setPageTitle.js';
 import { getView } from './routing/getView.js';
 import { create404View } from './views/404.js';
-export const handleDOMContentLoaded = () => {
+export const handleDOMContentLoaded = async () => {
     window.addEventListener('popstate', handleNavigation);
     document.body.addEventListener('click', handleNavigation);
     setFooterContent();
@@ -15,7 +15,7 @@ export const handleDOMContentLoaded = () => {
     const workingPath = '/'.concat(workingDirectory.toString());
     if (Object.values(validPaths).includes(workingPath)) {
         setPageTitle(workingPath);
-        main.innerHTML = getView(workingPath);
+        main.innerHTML = await Promise.resolve(getView(workingPath));
     }
     else {
         setPageTitle('Page Not Found');
