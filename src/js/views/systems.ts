@@ -1,16 +1,7 @@
-type SolarSystem = {
-  hostname: string;
-};
+import { SolarSystem, fetchNasaData } from '../services/fetchNasaData.js';
 
 export const createSystemsView = async () => {
-  const getData = async (): Promise<Array<SolarSystem>> => {
-    return fetch('https://extrasolar-proxy-server.glitch.me/get')
-      .then(res => res.json())
-      .then(data => data)
-      .catch(err => console.error(err));
-  };
-
-  const data: Array<SolarSystem> = await getData();
+  const data: Array<SolarSystem> = await fetchNasaData();
 
   const ul = document.createElement('ul');
 
