@@ -4,7 +4,7 @@ import { views } from '../views/index.js';
 type Route = {
   path: string,
   title: string,
-  view: string,
+  view: Promise<string> | string,
 };
 
 export const validRoutes: Array<Route> = [
@@ -21,7 +21,7 @@ export const validRoutes: Array<Route> = [
   {
     path: validPaths.systems,
     title: pageTitles.systems,
-    view: views.createSystemsView(),
+    view: new Promise<string>(resolve => resolve(views.createSystemsView())),
   },
   {
     path: validPaths.about,

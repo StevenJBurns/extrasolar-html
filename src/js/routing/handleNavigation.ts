@@ -10,7 +10,7 @@ export const handleNavigation = async (e: Event): Promise<void> => {
       setPageTitle(e.target.innerHTML);
 
       const main = document.querySelector('main');
-      if (main) main.innerHTML = getView(e.target.pathname);
+      if (main) main.innerHTML = await Promise.resolve(getView(e.target.pathname));
     };
   };
 };
