@@ -5,11 +5,13 @@ export const createSystemsView = async () => {
 
   const ul = document.createElement('ul');
 
-  data.sort().forEach((system: SolarSystem) => {
-    const li = document.createElement('li');
-    li.innerHTML = system.hostname;
-    ul.appendChild(li);
-  });
+  data.sort((a, b) => a.hostname > b.hostname ? 1 : -1)
+    .forEach((system: SolarSystem) => {
+      const li = document.createElement('li');
+      li.innerHTML = system.hostname;
+      ul.appendChild(li);
+    }
+  );
 
   return `
     <section>
