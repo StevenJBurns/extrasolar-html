@@ -1,17 +1,17 @@
-import { Planet } from "./planet.js";
-import { Star } from "./star.js";
+import { PlanetVisual } from "../Planet/PlanetVisual";
+import { StarVisual } from "../Star/StarVisual";
 
 type NewSolarSystemArgs = {
   name: string;
-  stars: Array<Star>;
-  planets: Array<Planet>;
+  stars: Array<StarVisual>;
+  planets: Array<PlanetVisual>;
   distanceFromEarth: number;
 };
 
-export class SolarSystem {
+export class SolarSystemVisual {
   systemName: string;
-  stars: Array<Star>;
-  planets: Array<Planet>;
+  stars: Array<StarVisual>;
+  planets: Array<PlanetVisual>;
   distanceFromEarth: number;
 
   constructor(args: NewSolarSystemArgs) {

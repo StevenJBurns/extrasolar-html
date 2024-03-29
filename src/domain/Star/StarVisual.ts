@@ -1,19 +1,19 @@
-import { Planet } from "./planet";
+import { PlanetVisual } from "../Planet/PlanetVisual";
 
 interface NewStarArgs {
   mass: number,
   radius: number,
   temperature: number,
   isBinary: boolean,
-  planets: Array<Planet>,
+  planets: Array<PlanetVisual>,
 };
 
-export class Star {
+export class StarVisual {
   mass: number;
   radius: number;
   temperature: number;
   isBinary: boolean;
-  planets: Array<Planet>;
+  planets: Array<PlanetVisual>;
 
   constructor(args: NewStarArgs) {
     this.mass = args.mass || 0;
@@ -30,5 +30,5 @@ export class Star {
     // this.polarRadiusA = 24;
     // this.polarRadiusB = 32;
     // this.xA, this.yA, this.xB, this.yB;
-  }
-}
+  };
+};

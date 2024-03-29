@@ -1,9 +1,9 @@
-import { handleNavigation } from './routing/handleNavigation.js';
+import { handleNavigation } from '../routing/handleNavigation.js';
 import { setFooterContent } from './setFooterInfo.js';
-import { validPaths } from './const/validPaths.js';
+import { validPaths } from '../const/validPaths.js';
 import { setPageTitle } from './setPageTitle.js';
-import { getView } from './routing/getView.js';
-import { create404View } from './views/404.js';
+import { getView } from '../routing/getView.js';
+import { create404View } from '../pages/404.js';
 
 export const handleDOMContentLoaded = async () => {
   window.addEventListener('popstate', handleNavigation);

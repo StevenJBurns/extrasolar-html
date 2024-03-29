@@ -14,7 +14,7 @@ export class SiteFooter extends HTMLElement {
         }
       </style>
       <section>
-        <h4>\u00A9 ${new Date().getFullYear()} Steven J Burns</h4>
+        <h4>\u00A9 ${new Date().getFullYear()} \u2022 Steven J Burns</h4>
       </section>
     `;
   };

@@ -61,3 +61,11 @@ h4 {
   background-color: #0F0F0F;
   color: #D0D0D0
 }
+
+hr {
+  margin: 0.25rem 1 rem;
+}
+
+canvas {
+  background-color: #0F0F0F;
+}

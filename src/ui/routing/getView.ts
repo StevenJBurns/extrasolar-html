@@ -1,5 +1,5 @@
 import { validRoutes } from "./validRoutes.js";
-import { views } from '../views/index.js';
+import { views } from '../pages/index.js';
 
 export const getView = (path: string): string | Promise<string> => {  
   const workingDirectory = location.pathname.split('/').slice(-1);

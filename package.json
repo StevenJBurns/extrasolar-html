@@ -6,7 +6,7 @@
   "description": "",
   "main": "dist/js/index.js",
   "scripts": {
-    "start": "npm run build",
+    "start": "npm run build && five-server dist",
     "clean": "rimraf dist",
     "build": "npm run clean && npm run copy && tsc --build --watch",
     "copy": "copyfiles -u 1 src/**/*.html src/**/*.css dist/",

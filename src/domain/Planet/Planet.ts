@@ -30,5 +30,5 @@ export class Planet {
 
     // this.trailLength = 128;
     // this.trailPositions = [];
-  }
-}
+  };
+};

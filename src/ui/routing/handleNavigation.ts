@@ -1,4 +1,4 @@
-import { setPageTitle } from '../setPageTitle.js';
+import { setPageTitle } from '../js/setPageTitle.js';
 import { getView } from './getView.js';
 
 export const handleNavigation = async (e: Event): Promise<void> => {

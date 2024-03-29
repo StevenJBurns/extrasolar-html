@@ -1,6 +1,7 @@
-import { SolarSystem, fetchNasaData } from '../services/fetchNasaData.js';
+import { SolarSystem, fetchNasaData } from '../../external/services/fetchNasaData.js';
 
 export const createSystemsView = async () => {
+  console.log('creating SystemsView');
   const data: Array<SolarSystem> = await fetchNasaData();
 
   const ul = document.createElement('ul');
@@ -14,8 +15,8 @@ export const createSystemsView = async () => {
   );
 
   return `
-    <section>
-      <h1>Systems</h1>
+    <section style="padding: 2rem">
+      <h1>Systems Stuff</h1>
       <hr />
       ${ul.outerHTML}
     </section>

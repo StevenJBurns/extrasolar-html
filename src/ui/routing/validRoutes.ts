@@ -1,5 +1,5 @@
 import { validPaths, pageTitles } from '../const/index.js'; 
-import { views } from '../views/index.js';
+import { views } from '../pages/index.js';
 
 type Route = {
   path: string,
